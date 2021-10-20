@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/Users/mrudge/Desktop/my_philo/libft/libft.h
+/home/arnisfet/Desktop/Philosophers/libft/libft.h
 stdlib.h
 -
 unistd.h
 -
 
-/Users/mrudge/Desktop/my_philo/main.c
+/home/arnisfet/Desktop/Philosophers/main.c
 philo.h
-/Users/mrudge/Desktop/my_philo/philo.h
+/home/arnisfet/Desktop/Philosophers/philo.h
 
-/Users/mrudge/Desktop/my_philo/philo.h
+/home/arnisfet/Desktop/Philosophers/philo.h
 stdio.h
 -
 stdlib.h
 -
 libft/libft.h
-/Users/mrudge/Desktop/my_philo/libft/libft.h
+/home/arnisfet/Desktop/Philosophers/libft/libft.h
 

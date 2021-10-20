@@ -23,21 +23,32 @@
 
 void	error_message()
 {
+	printf("Bad arg");
 	exit (0);
 }
 
 void	error_parse(char **av, int ac)
 {
+	long int number;
+	int arg;
+
+	arg = 4;
 	if (ac < 5 || ac > 6)
 		error_message();
-
+	while (arg != 0)
+	{
+		number = ft_atoi(av[arg]);
+		if (arg == 1 && number > 200 || number < 1)
+			error_message();
+		if (arg != 1 && number < 60 || number > 2147483647)
+			error_message();
+		arg--;
+	}
+	printf("222");
 }
 
 int main(int ac, char **av)
 {
-	ft_putchar_fd('1', 1);
 	error_parse(av, ac);
-
-	printf("---");
 	return 0;
 }
