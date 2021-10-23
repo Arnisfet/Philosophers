@@ -27,7 +27,17 @@ void	error_message()
 	exit (0);
 }
 
-void	error_parse(char **av, int ac)
+void	add_to_struct(int ac, long int num, t_data *p)
+{
+	if (ac == 3)
+		p->time_to_sleep = num;
+	if (ac == 2)
+		p->time_to_eat = num;
+	if (ac == 1)
+		p->time_to_die = num;
+}
+
+void	error_parse(char **av, int ac, t_data *p)
 {
 	long int number;
 	int arg;
@@ -38,17 +48,34 @@ void	error_parse(char **av, int ac)
 	while (arg != 0)
 	{
 		number = ft_atoi(av[arg]);
+		add_to_struct(arg, number, p);
 		if (arg == 1 && number > 200 || number < 1)
 			error_message();
 		if (arg != 1 && number < 60 || number > 2147483647)
 			error_message();
 		arg--;
 	}
-	printf("222");
+}
+
+void	threads(t_data *p)
+{
+
+}
+
+void	initialize(t_data *p)
+{
+
 }
 
 int main(int ac, char **av)
 {
-	error_parse(av, ac);
+	t_data *p;
+
+	p = (t_data *)malloc(sizeof (t_data));
+	memset(p, 0, sizeof (t_data));
+	printf("%li", p->time_to_die);
+	error_parse(av, ac, p);
+	initialize(p);
+	threads(p);
 	return 0;
 }

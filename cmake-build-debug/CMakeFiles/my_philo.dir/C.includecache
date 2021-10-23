@@ -13,6 +13,8 @@ unistd.h
 -
 
 /home/arnisfet/Desktop/Philosophers/main.c
+string.h
+-
 philo.h
 /home/arnisfet/Desktop/Philosophers/philo.h
 

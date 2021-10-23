@@ -13,8 +13,17 @@
 # ifndef MY_PHILO_PHILO_H
 # define MY_PHILO_PHILO_H
 
+#include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft/libft.h"
+
+typedef struct s_struct
+{
+	long int	philo;
+	long int	time_to_eat;
+	long int	time_to_die;
+	long int	time_to_sleep;
+}				t_data;
 
 #endif //MY_PHILO_PHILO_H
