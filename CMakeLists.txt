@@ -17,5 +17,10 @@ set(SOURCE_LIB libft/ft_atoi.c	libft/ft_bzero.c	libft/ft_calloc.c	libft/ft_count
         libft/ft_strtrim.c	libft/ft_strcmp.c   libft/ft_atof.c libft/libft.h)
 set(HEADERS_MAIN philo.h)
 add_library(foo STATIC ${SOURCE_LIB})
-add_executable(my_philo main.c)
-target_link_libraries(my_philo foo)
+
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+
+
+find_package(Threads REQUIRED)
+add_executable(my_philo src/main.c src/errors_&_check.c)
+target_link_libraries(my_philo PRIVATE Threads::Threads foo)

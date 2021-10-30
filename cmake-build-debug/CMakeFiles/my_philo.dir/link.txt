@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/my_philo.dir/main.c.o -o my_philo  libfoo.a 
+/usr/bin/cc -g CMakeFiles/my_philo.dir/src/main.c.o "CMakeFiles/my_philo.dir/src/errors_&_check.c.o" -o my_philo  libfoo.a -pthread 

@@ -19,22 +19,19 @@
  *
  * Варианты ошибок: 1) Кол-во аргументов меньше 5 или больше 6; */
 
-#include "philo.h"
 
-void	error_message()
-{
-	printf("Bad arg");
-	exit (0);
-}
+#include "../philo.h"
 
 void	add_to_struct(int ac, long int num, t_data *p)
 {
-	if (ac == 3)
+	if (ac == 4)
 		p->time_to_sleep = num;
-	if (ac == 2)
+	if (ac == 3)
 		p->time_to_eat = num;
-	if (ac == 1)
+	if (ac == 2)
 		p->time_to_die = num;
+	if (ac == 1)
+		p->philo = num;
 }
 
 void	error_parse(char **av, int ac, t_data *p)
@@ -48,23 +45,41 @@ void	error_parse(char **av, int ac, t_data *p)
 	while (arg != 0)
 	{
 		number = ft_atoi(av[arg]);
-		add_to_struct(arg, number, p);
 		if (arg == 1 && number > 200 || number < 1)
 			error_message();
 		if (arg != 1 && number < 60 || number > 2147483647)
 			error_message();
+		add_to_struct(arg, number, p);
 		arg--;
 	}
 }
 
 void	threads(t_data *p)
 {
+	int i;
 
+	i = 0;
+	while (i < p->philo)
+	{
+		p->data[i].number = i;
+		pthread_create(&p->data[i].arr_ph[i], NULL, ft_check, (void *)p->data[i].arr_ph[i]);
+		i++;
+	}
+	i = 0;
+	while (i < p->philo)
+	{
+		pthread_join(p->data[i].arr_ph[i], NULL);
+		i++;
+	}
 }
 
-void	initialize(t_data *p)
+int	initialize(t_data *p)
 {
-
+	p->data = (t_attribute *)malloc(sizeof (t_attribute));
+	p->data->arr_ph = (pthread_t *)malloc(sizeof(pthread_t) * p->philo);
+	if (!p->data->arr_ph)
+		return (0);
+	return (1);
 }
 
 int main(int ac, char **av)
@@ -72,8 +87,6 @@ int main(int ac, char **av)
 	t_data *p;
 
 	p = (t_data *)malloc(sizeof (t_data));
-	memset(p, 0, sizeof (t_data));
-	printf("%li", p->time_to_die);
 	error_parse(av, ac, p);
 	initialize(p);
 	threads(p);

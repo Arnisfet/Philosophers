@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/my_philo.dir/main.c.o"
+  "CMakeFiles/my_philo.dir/src/errors_&_check.c.o"
+  "CMakeFiles/my_philo.dir/src/main.c.o"
   "my_philo"
   "my_philo.pdb"
 )

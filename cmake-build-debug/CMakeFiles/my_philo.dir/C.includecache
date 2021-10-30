@@ -12,17 +12,23 @@ stdlib.h
 unistd.h
 -
 
-/home/arnisfet/Desktop/Philosophers/main.c
+/home/arnisfet/Desktop/Philosophers/philo.h
 string.h
 -
-philo.h
-/home/arnisfet/Desktop/Philosophers/philo.h
-
-/home/arnisfet/Desktop/Philosophers/philo.h
+pthread.h
+-
 stdio.h
 -
 stdlib.h
 -
 libft/libft.h
 /home/arnisfet/Desktop/Philosophers/libft/libft.h
+
+/home/arnisfet/Desktop/Philosophers/src/errors_&_check.c
+../philo.h
+/home/arnisfet/Desktop/Philosophers/philo.h
+
+/home/arnisfet/Desktop/Philosophers/src/main.c
+../philo.h
+/home/arnisfet/Desktop/Philosophers/philo.h
 
