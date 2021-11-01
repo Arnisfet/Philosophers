@@ -6,7 +6,6 @@ void	error_message()
 	exit (0);
 }
 
-void *ft_check(void *check, t_data *p)
+void *ft_check(void *check)
 {
-	printf("%d", check);
 }

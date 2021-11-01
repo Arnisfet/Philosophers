@@ -21,7 +21,7 @@
 
 typedef struct s_philo_attribute
 {
-	pthread_t	*arr_ph;
+	pthread_t	arr_ph;
 	int	number;
 }				t_attribute;
 
@@ -36,6 +36,6 @@ typedef struct s_struct
 }				t_data;
 
 void	error_message();
-void	*ft_check(void *check, t_data *p);
+void	*ft_check(void *check);
 
 #endif //MY_PHILO_PHILO_H

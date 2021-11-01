@@ -62,21 +62,23 @@ void	threads(t_data *p)
 	while (i < p->philo)
 	{
 		p->data[i].number = i;
-		pthread_create(&p->data[i].arr_ph[i], NULL, ft_check, (void *)p->data[i].arr_ph[i]);
+		pthread_create(&p->data[i].arr_ph, NULL, ft_check,	&(p->data[i]
+		.arr_ph));
+		printf("%lu\n", p->data[i].arr_ph);
 		i++;
 	}
 	i = 0;
 	while (i < p->philo)
 	{
-		pthread_join(p->data[i].arr_ph[i], NULL);
+		pthread_join(p->data[i].arr_ph, NULL);
 		i++;
 	}
 }
 
 int	initialize(t_data *p)
 {
-	p->data = (t_attribute *)malloc(sizeof (t_attribute));
-	p->data->arr_ph = (pthread_t *)malloc(sizeof(pthread_t) * p->philo);
+	p->data = (t_attribute *)malloc(sizeof (t_attribute) * 100);
+//	p->data->arr_ph = (pthread_t *)malloc(sizeof(pthread_t) * p->philo);
 	if (!p->data->arr_ph)
 		return (0);
 	return (1);
