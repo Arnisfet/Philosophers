@@ -77,8 +77,7 @@ void	threads(t_data *p)
 
 int	initialize(t_data *p)
 {
-	p->data = (t_attribute *)malloc(sizeof (t_attribute) * 100);
-//	p->data->arr_ph = (pthread_t *)malloc(sizeof(pthread_t) * p->philo);
+	p->data = (t_attribute *)malloc(sizeof (t_attribute) * p->philo);
 	if (!p->data->arr_ph)
 		return (0);
 	return (1);
