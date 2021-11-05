@@ -22,5 +22,5 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 
 find_package(Threads REQUIRED)
-add_executable(my_philo src/main.c src/errors_&_check.c)
+add_executable(my_philo src/main.c src/another.c src/threads.c)
 target_link_libraries(my_philo PRIVATE Threads::Threads foo)

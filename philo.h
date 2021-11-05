@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft/libft.h"
+# include	<sys/time.h>
 
 typedef struct s_philo_attribute
 {
@@ -31,11 +32,12 @@ typedef struct s_struct
 	long int	time_to_eat;
 	long int	time_to_die;
 	long int	time_to_sleep;
-
+	long int	start;
 	t_attribute *data;
 }				t_data;
 
 void	error_message();
-void	*ft_check(void *check);
+long int	get_time();
+void	threads(t_data *p);
 
 #endif //MY_PHILO_PHILO_H

@@ -1126,6 +1126,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/threads.o: src/threads.c.o
+.PHONY : src/threads.o
+
+# target to build an object file
+src/threads.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/threads.c.o
+.PHONY : src/threads.c.o
+
+src/threads.i: src/threads.c.i
+.PHONY : src/threads.i
+
+# target to preprocess a source file
+src/threads.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/threads.c.i
+.PHONY : src/threads.c.i
+
+src/threads.s: src/threads.c.s
+.PHONY : src/threads.s
+
+# target to generate assembly for a file
+src/threads.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/threads.c.s
+.PHONY : src/threads.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1259,6 +1283,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/threads.o"
+	@echo "... src/threads.i"
+	@echo "... src/threads.s"
 .PHONY : help
 
 

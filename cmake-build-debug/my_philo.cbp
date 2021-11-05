@@ -240,6 +240,9 @@
 		<Unit filename="/home/arnisfet/Desktop/Philosophers/src/main.c">
 			<Option target="my_philo"/>
 		</Unit>
+		<Unit filename="/home/arnisfet/Desktop/Philosophers/src/threads.c">
+			<Option target="my_philo"/>
+		</Unit>
 		<Unit filename="/home/arnisfet/Desktop/Philosophers/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/arnisfet/Desktop/Philosophers/src/errors_&_check.c" "/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles/my_philo.dir/src/errors_&_check.c.o"
   "/home/arnisfet/Desktop/Philosophers/src/main.c" "/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles/my_philo.dir/src/main.c.o"
+  "/home/arnisfet/Desktop/Philosophers/src/threads.c" "/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles/my_philo.dir/src/threads.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
