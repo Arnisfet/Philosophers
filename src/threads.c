@@ -16,7 +16,7 @@ void *ft_actions(void *check)
 	p->time_to_born = get_time();
 	while (1)
 	{
-		eating
+		put_fork(p);
 
 	}
 

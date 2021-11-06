@@ -23,12 +23,10 @@ stdlib.h
 -
 libft/libft.h
 /home/arnisfet/Desktop/Philosophers/libft/libft.h
+sys/time.h
+-
 
-/home/arnisfet/Desktop/Philosophers/src/errors_&_check.c
-../philo.h
-/home/arnisfet/Desktop/Philosophers/philo.h
-
-/home/arnisfet/Desktop/Philosophers/src/main.c
+/home/arnisfet/Desktop/Philosophers/src/another.c
 ../philo.h
 /home/arnisfet/Desktop/Philosophers/philo.h
 

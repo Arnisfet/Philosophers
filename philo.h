@@ -20,12 +20,19 @@
 # include "libft/libft.h"
 # include	<sys/time.h>
 
+# define PUT_FORK	0
+# define EAT	1
+# define SLEEP	2
+# define THINK	3
+
+
 typedef struct s_philo_attribute
 {
-	pthread_t	arr_ph;
-	int			number;
-	long int	time_to_born;
+	pthread_t		arr_ph;
+	int				number;
+	long int		time_to_born;
 
+	struct s_struct	*data;
 }				t_attribute;
 
 typedef struct s_struct
@@ -36,12 +43,15 @@ typedef struct s_struct
 	long int	time_to_sleep;
 
 	pthread_mutex_t *forks;
+	pthread_mutex_t write;
 
 	t_attribute *data;
 }				t_data;
 
-void	error_message();
+void		error_message();
 long int	get_time();
-void	threads(t_data *p);
+void		threads(t_data *p);
+void		put_fork(t_attribute *p);
+void		display_message(t_attribute *p, int number);
 
 #endif //MY_PHILO_PHILO_H
