@@ -234,7 +234,10 @@
 		<Unit filename="/home/arnisfet/Desktop/Philosophers/libft/libft.h">
 			<Option target="foo"/>
 		</Unit>
-		<Unit filename="/home/arnisfet/Desktop/Philosophers/src/errors_&amp;_check.c">
+		<Unit filename="/home/arnisfet/Desktop/Philosophers/src/actions.c">
+			<Option target="my_philo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Desktop/Philosophers/src/another.c">
 			<Option target="my_philo"/>
 		</Unit>
 		<Unit filename="/home/arnisfet/Desktop/Philosophers/src/main.c">

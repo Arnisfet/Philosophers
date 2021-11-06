@@ -83,12 +83,12 @@ clean: CMakeFiles/foo.dir/clean
 CMakeFiles/my_philo.dir/all: CMakeFiles/foo.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles --progress-num=41,42,43,44 "Built target my_philo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles --progress-num=41,42,43,44,45 "Built target my_philo"
 .PHONY : CMakeFiles/my_philo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/my_philo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles 45
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/my_philo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/my_philo.dir/rule

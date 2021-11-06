@@ -13,7 +13,7 @@
 /* Этапы написания программы:
  * 1) Создание прасера для 5 параметров: колв-во философов(и вилок), время до
  * смерти (время в мс/с, через которое философ умирает, если не начал есть)
- * время для еды (время в которое филосов начинает есть), время на сон (время
+ * время до еды (время в которое филосов начинает есть), время на сон (время
  * через которое филосов начинает спать) , количество раз, которое философ
  * должен поесть.
  *
@@ -56,9 +56,17 @@ void	error_parse(char **av, int ac, t_data *p)
 
 int	initialize(t_data *p)
 {
+	int i;
+
+	i = 0;
 	p->data = (t_attribute *)malloc(sizeof (t_attribute) * p->philo);
-	if (!p->data->arr_ph)
+	if (!p->data)
 		return (0);
+	p->forks = (pthread_mutex_t *)malloc(sizeof (pthread_mutex_t) * p->philo);
+	if (!p->data)
+		return (0);
+	while (i < p->philo)
+		pthread_mutex_init(&p->forks[i++], NULL);
 	return (1);
 }
 

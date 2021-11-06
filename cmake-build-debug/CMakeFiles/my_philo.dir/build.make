@@ -79,18 +79,18 @@ CMakeFiles/my_philo.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_philo.dir/src/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/arnisfet/Desktop/Philosophers/src/main.c -o CMakeFiles/my_philo.dir/src/main.c.s
 
-CMakeFiles/my_philo.dir/src/errors_&_check.c.o: CMakeFiles/my_philo.dir/flags.make
-CMakeFiles/my_philo.dir/src/errors_&_check.c.o: ../src/errors_&_check.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_philo.dir/src/errors_&_check.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o "CMakeFiles/my_philo.dir/src/errors_&_check.c.o" -c "/home/arnisfet/Desktop/Philosophers/src/errors_&_check.c"
+CMakeFiles/my_philo.dir/src/another.c.o: CMakeFiles/my_philo.dir/flags.make
+CMakeFiles/my_philo.dir/src/another.c.o: ../src/another.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_philo.dir/src/another.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/my_philo.dir/src/another.c.o -c /home/arnisfet/Desktop/Philosophers/src/another.c
 
-CMakeFiles/my_philo.dir/src/errors_&_check.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/my_philo.dir/src/errors_&_check.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/arnisfet/Desktop/Philosophers/src/errors_&_check.c" > "CMakeFiles/my_philo.dir/src/errors_&_check.c.i"
+CMakeFiles/my_philo.dir/src/another.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/my_philo.dir/src/another.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/arnisfet/Desktop/Philosophers/src/another.c > CMakeFiles/my_philo.dir/src/another.c.i
 
-CMakeFiles/my_philo.dir/src/errors_&_check.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_philo.dir/src/errors_&_check.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/arnisfet/Desktop/Philosophers/src/errors_&_check.c" -o "CMakeFiles/my_philo.dir/src/errors_&_check.c.s"
+CMakeFiles/my_philo.dir/src/another.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_philo.dir/src/another.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/arnisfet/Desktop/Philosophers/src/another.c -o CMakeFiles/my_philo.dir/src/another.c.s
 
 CMakeFiles/my_philo.dir/src/threads.c.o: CMakeFiles/my_philo.dir/flags.make
 CMakeFiles/my_philo.dir/src/threads.c.o: ../src/threads.c
@@ -105,22 +105,37 @@ CMakeFiles/my_philo.dir/src/threads.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_philo.dir/src/threads.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/arnisfet/Desktop/Philosophers/src/threads.c -o CMakeFiles/my_philo.dir/src/threads.c.s
 
+CMakeFiles/my_philo.dir/src/actions.c.o: CMakeFiles/my_philo.dir/flags.make
+CMakeFiles/my_philo.dir/src/actions.c.o: ../src/actions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/my_philo.dir/src/actions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/my_philo.dir/src/actions.c.o -c /home/arnisfet/Desktop/Philosophers/src/actions.c
+
+CMakeFiles/my_philo.dir/src/actions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/my_philo.dir/src/actions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/arnisfet/Desktop/Philosophers/src/actions.c > CMakeFiles/my_philo.dir/src/actions.c.i
+
+CMakeFiles/my_philo.dir/src/actions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_philo.dir/src/actions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/arnisfet/Desktop/Philosophers/src/actions.c -o CMakeFiles/my_philo.dir/src/actions.c.s
+
 # Object files for target my_philo
 my_philo_OBJECTS = \
 "CMakeFiles/my_philo.dir/src/main.c.o" \
-"CMakeFiles/my_philo.dir/src/errors_&_check.c.o" \
-"CMakeFiles/my_philo.dir/src/threads.c.o"
+"CMakeFiles/my_philo.dir/src/another.c.o" \
+"CMakeFiles/my_philo.dir/src/threads.c.o" \
+"CMakeFiles/my_philo.dir/src/actions.c.o"
 
 # External object files for target my_philo
 my_philo_EXTERNAL_OBJECTS =
 
 my_philo: CMakeFiles/my_philo.dir/src/main.c.o
-my_philo: CMakeFiles/my_philo.dir/src/errors_&_check.c.o
+my_philo: CMakeFiles/my_philo.dir/src/another.c.o
 my_philo: CMakeFiles/my_philo.dir/src/threads.c.o
+my_philo: CMakeFiles/my_philo.dir/src/actions.c.o
 my_philo: CMakeFiles/my_philo.dir/build.make
 my_philo: libfoo.a
 my_philo: CMakeFiles/my_philo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable my_philo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable my_philo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_philo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

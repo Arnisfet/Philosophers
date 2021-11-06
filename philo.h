@@ -23,7 +23,9 @@
 typedef struct s_philo_attribute
 {
 	pthread_t	arr_ph;
-	int	number;
+	int			number;
+	long int	time_to_born;
+
 }				t_attribute;
 
 typedef struct s_struct
@@ -32,7 +34,9 @@ typedef struct s_struct
 	long int	time_to_eat;
 	long int	time_to_die;
 	long int	time_to_sleep;
-	long int	start;
+
+	pthread_mutex_t *forks;
+
 	t_attribute *data;
 }				t_data;
 

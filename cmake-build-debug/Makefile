@@ -1078,29 +1078,53 @@ libft/ft_toupper.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
-src/errors_&_check.o: src/errors_&_check.c.o
-.PHONY : src/errors_&_check.o
+src/actions.o: src/actions.c.o
+.PHONY : src/actions.o
 
 # target to build an object file
-src/errors_&_check.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make "CMakeFiles/my_philo.dir/src/errors_&_check.c.o"
-.PHONY : src/errors_&_check.c.o
+src/actions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/actions.c.o
+.PHONY : src/actions.c.o
 
-src/errors_&_check.i: src/errors_&_check.c.i
-.PHONY : src/errors_&_check.i
+src/actions.i: src/actions.c.i
+.PHONY : src/actions.i
 
 # target to preprocess a source file
-src/errors_&_check.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make "CMakeFiles/my_philo.dir/src/errors_&_check.c.i"
-.PHONY : src/errors_&_check.c.i
+src/actions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/actions.c.i
+.PHONY : src/actions.c.i
 
-src/errors_&_check.s: src/errors_&_check.c.s
-.PHONY : src/errors_&_check.s
+src/actions.s: src/actions.c.s
+.PHONY : src/actions.s
 
 # target to generate assembly for a file
-src/errors_&_check.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make "CMakeFiles/my_philo.dir/src/errors_&_check.c.s"
-.PHONY : src/errors_&_check.c.s
+src/actions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/actions.c.s
+.PHONY : src/actions.c.s
+
+src/another.o: src/another.c.o
+.PHONY : src/another.o
+
+# target to build an object file
+src/another.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/another.c.o
+.PHONY : src/another.c.o
+
+src/another.i: src/another.c.i
+.PHONY : src/another.i
+
+# target to preprocess a source file
+src/another.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/another.c.i
+.PHONY : src/another.c.i
+
+src/another.s: src/another.c.s
+.PHONY : src/another.s
+
+# target to generate assembly for a file
+src/another.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_philo.dir/build.make CMakeFiles/my_philo.dir/src/another.c.s
+.PHONY : src/another.c.s
 
 src/main.o: src/main.c.o
 .PHONY : src/main.o
@@ -1277,9 +1301,12 @@ help:
 	@echo "... libft/ft_toupper.o"
 	@echo "... libft/ft_toupper.i"
 	@echo "... libft/ft_toupper.s"
-	@echo "... src/errors_&_check.o"
-	@echo "... src/errors_&_check.i"
-	@echo "... src/errors_&_check.s"
+	@echo "... src/actions.o"
+	@echo "... src/actions.i"
+	@echo "... src/actions.s"
+	@echo "... src/another.o"
+	@echo "... src/another.i"
+	@echo "... src/another.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
