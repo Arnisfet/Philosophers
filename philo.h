@@ -25,6 +25,7 @@
 # define SLEEP	2
 # define THINK	3
 
+struct s_struct;
 
 typedef struct s_philo_attribute
 {
@@ -45,7 +46,7 @@ typedef struct s_struct
 	pthread_mutex_t *forks;
 	pthread_mutex_t write;
 
-	t_attribute *data;
+	t_attribute *philo_t;
 }				t_data;
 
 void		error_message();

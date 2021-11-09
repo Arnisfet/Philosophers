@@ -32,6 +32,7 @@ void	add_to_struct(int ac, long int num, t_data *p)
 		p->time_to_die = num;
 	if (ac == 1)
 		p->philo = num;
+	p->philo_t = NULL;
 }
 
 void	error_parse(char **av, int ac, t_data *p)
@@ -59,11 +60,11 @@ int	initialize(t_data *p)
 	int i;
 
 	i = 0;
-	p->data = (t_attribute *)malloc(sizeof (t_attribute) * p->philo);
-	if (!p->data)
+	p->philo_t = (t_attribute *)malloc(sizeof (t_attribute) * p->philo);
+	if (!p->philo_t)
 		return (0);
 	p->forks = (pthread_mutex_t *)malloc(sizeof (pthread_mutex_t) * p->philo);
-	if (!p->data)
+	if (!p->philo_t)
 		return (0);
 	while (i < p->philo)
 		pthread_mutex_init(&p->forks[i++], NULL);

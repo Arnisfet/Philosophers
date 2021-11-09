@@ -29,15 +29,16 @@ void	threads(t_data *p)
 	i = 0;
 	while (i < p->philo)
 	{
-		p->data[i].number = i;
-		pthread_create(&p->data[i].arr_ph, NULL, ft_actions,	&(p->data[i])); // Сделай проверку на выделение потоков
-		printf("%lu\n", p->data[i].arr_ph);
+		p->philo_t[i].number = i;
+		p->philo_t[i].data = p;
+		pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &(p->philo_t[i])); // Сделай проверку на выделение потоков
+		printf("%lu\n", p->philo_t[i].arr_ph);
 		i++;
 	}
 	i = 0;
 	while (i < p->philo)
 	{
-		pthread_join(p->data[i].arr_ph, NULL);
+		pthread_join(p->philo_t[i].arr_ph, NULL);
 		i++;
 	}
 }
