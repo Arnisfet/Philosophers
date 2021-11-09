@@ -51,8 +51,9 @@ typedef struct s_struct
 
 void		error_message();
 long int	get_time();
-void		threads(t_data *p);
+void		threads(t_data *p, int number);
 void		put_fork(t_attribute *p);
 void		display_message(t_attribute *p, int number);
+void		join(t_data *p);
 
 #endif //MY_PHILO_PHILO_H

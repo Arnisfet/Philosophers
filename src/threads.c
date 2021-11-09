@@ -22,19 +22,10 @@ void *ft_actions(void *check)
 
 }
 
-void	threads(t_data *p)
+void	join(t_data *p)
 {
 	int i;
 
-	i = 0;
-	while (i < p->philo)
-	{
-		p->philo_t[i].number = i;
-		p->philo_t[i].data = p;
-		pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &(p->philo_t[i])); // Сделай проверку на выделение потоков
-		printf("%lu\n", p->philo_t[i].arr_ph);
-		i++;
-	}
 	i = 0;
 	while (i < p->philo)
 	{
@@ -42,3 +33,20 @@ void	threads(t_data *p)
 		i++;
 	}
 }
+
+void	threads(t_data *p, int number)
+{
+	int i;
+
+	i = 1;
+	if (number == 2)
+		i = 0;
+	while (i < p->philo)
+	{
+			p->philo_t[i].number = i;
+			p->philo_t[i].data = p;
+			pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &(p->philo_t[i])); // Сделай проверку на выделение потоков
+			i += 2;
+	}
+}
+

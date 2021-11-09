@@ -79,6 +79,8 @@ int main(int ac, char **av)
 	p = (t_data *)malloc(sizeof (t_data));
 	error_parse(av, ac, p);
 	initialize(p);
-	threads(p);
+	threads(p, 2);
+	threads(p, 1);
+	join(p);
 	return 0;
 }
