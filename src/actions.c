@@ -31,7 +31,7 @@ void	put_fork(t_attribute *p)
 	}
 }
 
-void	clean_forks(t_attribute *p)
+void	fall_asleep(t_attribute *p)
 {
 	display_message(p, 3);
 	pthread_mutex_unlock(&p->data->forks[p->left_fork]);

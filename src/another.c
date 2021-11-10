@@ -30,6 +30,8 @@ void	display_message(t_attribute *p, int number)
 		ft_putstr_fd("is eating", 1);
 	if (number == 3)
 		ft_putstr_fd("is sleeping", 1);
+	if (number == 4)
+		ft_putstr_fd("is thinking", 1);
 	ft_putchar_fd('\n', 1);
 	pthread_mutex_unlock(&p->data->write);
 }

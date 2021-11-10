@@ -18,8 +18,8 @@ void *ft_actions(void *check)
 	{
 		put_fork(p);
 		eat(p);
-		clean_forks(p);
-
+		fall_asleep(p);
+		display_message(p, 4);
 	}
 
 }

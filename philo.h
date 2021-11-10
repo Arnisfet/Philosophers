@@ -58,7 +58,7 @@ void		threads(t_data *p, int number);
 void		put_fork(t_attribute *p);
 void		display_message(t_attribute *p, int number);
 void		join(t_data *p);
-void		clean_forks(t_attribute *p);
+void		fall_asleep(t_attribute *p);
 void		eat(t_attribute *p);
 
 #endif //MY_PHILO_PHILO_H
