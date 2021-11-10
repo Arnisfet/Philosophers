@@ -69,6 +69,7 @@ int	initialize(t_data *p)
 	while (i < p->philo)
 		pthread_mutex_init(&p->forks[i++], NULL);
 	pthread_mutex_init(&p->write, NULL);
+	pthread_mutex_init(&p->eat, NULL);
 	return (1);
 }
 

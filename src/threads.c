@@ -17,6 +17,7 @@ void *ft_actions(void *check)
 	while (1)
 	{
 		put_fork(p);
+		eat(p);
 		clean_forks(p);
 
 	}

@@ -47,6 +47,7 @@ typedef struct s_struct
 
 	pthread_mutex_t *forks;
 	pthread_mutex_t write;
+	pthread_mutex_t eat;
 
 	t_attribute *philo_t;
 }				t_data;
@@ -58,5 +59,6 @@ void		put_fork(t_attribute *p);
 void		display_message(t_attribute *p, int number);
 void		join(t_data *p);
 void		clean_forks(t_attribute *p);
+void		eat(t_attribute *p);
 
 #endif //MY_PHILO_PHILO_H

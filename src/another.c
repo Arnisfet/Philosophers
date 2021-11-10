@@ -21,12 +21,15 @@ void	display_message(t_attribute *p, int number)
 {
 	pthread_mutex_lock(&p->data->write);
 	ft_putnbr_fd(get_time() - p->time_to_born, 1);
-	ft_putchar_fd('\t', 1);
+	ft_putchar_fd(' ', 1);
 	ft_putnbr_fd(p->number, 1);
+	ft_putchar_fd(' ', 1);
 	if (number == 1)
-		ft_putstr_fd("\tTake a fork", 1);
+		ft_putstr_fd("has taken a fork", 1);
 	if (number == 2)
-		ft_putstr_fd("\tSleep", 1);
+		ft_putstr_fd("is eating", 1);
+	if (number == 3)
+		ft_putstr_fd("is sleeping", 1);
 	ft_putchar_fd('\n', 1);
 	pthread_mutex_unlock(&p->data->write);
 }
