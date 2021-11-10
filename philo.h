@@ -29,9 +29,11 @@ struct s_struct;
 
 typedef struct s_philo_attribute
 {
-	pthread_t		arr_ph;
-	int				number;
-	long int		time_to_born;
+	pthread_t	arr_ph;
+	int			number;
+	long int	time_to_born;
+	int			left_fork;
+	int			right_fork;
 
 	struct s_struct	*data;
 }				t_attribute;
@@ -55,5 +57,6 @@ void		threads(t_data *p, int number);
 void		put_fork(t_attribute *p);
 void		display_message(t_attribute *p, int number);
 void		join(t_data *p);
+void		clean_forks(t_attribute *p);
 
 #endif //MY_PHILO_PHILO_H

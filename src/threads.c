@@ -17,6 +17,7 @@ void *ft_actions(void *check)
 	while (1)
 	{
 		put_fork(p);
+		clean_forks(p);
 
 	}
 
@@ -43,8 +44,10 @@ void	threads(t_data *p, int number)
 		i = 0;
 	while (i < p->philo)
 	{
-			p->philo_t[i].number = i;
+			p->philo_t[i].number = i + 1;
 			p->philo_t[i].data = p;
+			p->philo_t[i].left_fork = i;
+			p->philo_t[i].right_fork = ((i + 1) % p->philo);
 			pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &(p->philo_t[i])); // Сделай проверку на выделение потоков
 			i += 2;
 	}

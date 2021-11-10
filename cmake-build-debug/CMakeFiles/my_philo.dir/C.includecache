@@ -30,15 +30,3 @@ sys/time.h
 ../philo.h
 /home/arnisfet/Desktop/Philosophers/philo.h
 
-/home/arnisfet/Desktop/Philosophers/src/another.c
-../philo.h
-/home/arnisfet/Desktop/Philosophers/philo.h
-
-/home/arnisfet/Desktop/Philosophers/src/main.c
-../philo.h
-/home/arnisfet/Desktop/Philosophers/philo.h
-
-/home/arnisfet/Desktop/Philosophers/src/threads.c
-../philo.h
-/home/arnisfet/Desktop/Philosophers/philo.h
-

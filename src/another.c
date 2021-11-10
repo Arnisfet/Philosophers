@@ -16,12 +16,18 @@ long int	get_time()
 	return (result);
 }
 
+
 void	display_message(t_attribute *p, int number)
 {
 	pthread_mutex_lock(&p->data->write);
 	ft_putnbr_fd(get_time() - p->time_to_born, 1);
 	ft_putchar_fd('\t', 1);
 	ft_putnbr_fd(p->number, 1);
+	if (number == 1)
+		ft_putstr_fd("\tTake a fork", 1);
+	if (number == 2)
+		ft_putstr_fd("\tSleep", 1);
 	ft_putchar_fd('\n', 1);
 	pthread_mutex_unlock(&p->data->write);
 }
+
