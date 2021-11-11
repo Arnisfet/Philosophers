@@ -82,6 +82,7 @@ int main(int ac, char **av)
 	initialize(p);
 	threads(p, 2);
 	threads(p, 1);
+	death_monitor(p);
 	join(p);
 	return 0;
 }

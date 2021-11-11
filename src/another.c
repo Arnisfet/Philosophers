@@ -32,6 +32,15 @@ void	display_message(t_attribute *p, int number)
 		ft_putstr_fd("is sleeping", 1);
 	if (number == 4)
 		ft_putstr_fd("is thinking", 1);
+	if (number == 5)
+	{
+		ft_putstr_fd("is dead", 1);
+		printf(" limit %ld last eat %ld get_time %ld time to born %ld ",
+			   p->limit,
+			   p->last_eat,
+			   get_time(), p->time_to_born);
+		exit (0);
+	}
 	ft_putchar_fd('\n', 1);
 	pthread_mutex_unlock(&p->data->write);
 }

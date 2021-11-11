@@ -14,6 +14,8 @@ void *ft_actions(void *check)
 
 	p = (t_attribute *)check;
 	p->time_to_born = get_time();
+	p->last_eat = get_time();
+	p->limit = p->last_eat + p->data->time_to_die;
 	while (1)
 	{
 		put_fork(p);
@@ -43,6 +45,7 @@ void	threads(t_data *p, int number)
 	i = 1;
 	if (number == 2)
 		i = 0;
+
 	while (i < p->philo)
 	{
 			p->philo_t[i].number = i + 1;
@@ -52,5 +55,27 @@ void	threads(t_data *p, int number)
 			pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &(p->philo_t[i])); // Сделай проверку на выделение потоков
 			i += 2;
 	}
+	i = 0;
+
+//	usleep(1);
+	pthread_create(&p->monitor, NULL, death_monitor, &p->philo_t->data);
 }
 
+void	*death_monitor(void *check)
+{
+	int i;
+	t_data *p;
+
+	p = (t_data *)check;
+	i = 0;
+	while (21)
+	{
+		while (i < p->philo)
+		{
+			if ((get_time() > p->philo_t[i].limit) && !p->philo_t[i].eating)
+				display_message(&p->philo_t[i], 5);
+			i++;
+		}
+		i = 0;
+	}
+}

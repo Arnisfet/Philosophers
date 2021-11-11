@@ -9,7 +9,11 @@ void	eat(t_attribute *p)
 {
 	pthread_mutex_lock(&p->data->eat);
 	display_message(p, 2);
+	p->last_eat = get_time();
+	p->limit = p->last_eat + p->data->time_to_die;
+	p->eating = 1;
 	usleep(p->data->time_to_eat * 1000);
+	p->eating = 0;
 	pthread_mutex_unlock(&p->data->eat);
 }
 

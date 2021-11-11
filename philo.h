@@ -34,6 +34,9 @@ typedef struct s_philo_attribute
 	long int	time_to_born;
 	int			left_fork;
 	int			right_fork;
+	long int	limit;
+	long int	last_eat;
+	int			eating;
 
 	struct s_struct	*data;
 }				t_attribute;
@@ -49,6 +52,8 @@ typedef struct s_struct
 	pthread_mutex_t write;
 	pthread_mutex_t eat;
 
+	pthread_t		monitor;
+
 	t_attribute *philo_t;
 }				t_data;
 
@@ -60,5 +65,6 @@ void		display_message(t_attribute *p, int number);
 void		join(t_data *p);
 void		fall_asleep(t_attribute *p);
 void		eat(t_attribute *p);
+void		*death_monitor(void *check);
 
 #endif //MY_PHILO_PHILO_H
