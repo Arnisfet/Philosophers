@@ -16,6 +16,7 @@ void *ft_actions(void *check)
 	p->time_to_born = get_time();
 	p->last_eat = get_time();
 	p->limit = p->last_eat + p->data->time_to_die;
+	p->eating = 0;
 	while (1)
 	{
 		put_fork(p);
@@ -23,7 +24,6 @@ void *ft_actions(void *check)
 		fall_asleep(p);
 		display_message(p, 4);
 	}
-
 }
 
 void	join(t_data *p)
@@ -36,6 +36,7 @@ void	join(t_data *p)
 		pthread_join(p->philo_t[i].arr_ph, NULL);
 		i++;
 	}
+//	pthread_join(p->monitor, NULL);
 }
 
 void	threads(t_data *p, int number)
@@ -55,10 +56,12 @@ void	threads(t_data *p, int number)
 			pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &(p->philo_t[i])); // Сделай проверку на выделение потоков
 			i += 2;
 	}
-	i = 0;
-
-//	usleep(1);
-	pthread_create(&p->monitor, NULL, death_monitor, &p->philo_t->data);
+	usleep(500);
+	if (number == 1)
+	{
+		pthread_create(&p->monitor, NULL, death_monitor, p);
+		pthread_detach(p->monitor);
+	}
 }
 
 void	*death_monitor(void *check)

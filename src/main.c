@@ -81,8 +81,7 @@ int main(int ac, char **av)
 	error_parse(av, ac, p);
 	initialize(p);
 	threads(p, 2);
-	threads(p, 1);
-	death_monitor(p);
+	threads(p, 1);;
 	join(p);
 	return 0;
 }
