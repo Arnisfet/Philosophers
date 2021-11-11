@@ -36,7 +36,7 @@ void	join(t_data *p)
 		pthread_join(p->philo_t[i].arr_ph, NULL);
 		i++;
 	}
-//	pthread_join(p->monitor, NULL);
+	pthread_join(p->monitor, NULL);
 }
 
 void	threads(t_data *p, int number)
@@ -55,8 +55,8 @@ void	threads(t_data *p, int number)
 			p->philo_t[i].right_fork = ((i + 1) % p->philo);
 			pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &(p->philo_t[i])); // Сделай проверку на выделение потоков
 			i += 2;
+			usleep(1000);
 	}
-	usleep(500);
 	if (number == 1)
 	{
 		pthread_create(&p->monitor, NULL, death_monitor, p);
