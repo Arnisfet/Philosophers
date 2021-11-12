@@ -87,8 +87,8 @@ int main(int ac, char **av)
 	p->count_eat = 0; // Убери потом этот говнокод
 	error_parse(av, ac, p);
 	initialize(p);
-	threads(p, 2);
-	threads(p, 1);
+	if (threads(p, 2) || threads(p, 1))
+		return (0);
 	join(p);
 	return 0;
 }
