@@ -48,3 +48,13 @@ void	display_message(t_attribute *p, int number)
 	pthread_mutex_unlock(&p->data->write);
 }
 
+void	my_usleep(long int value)
+{
+	long int	check;
+	long int	stop;
+
+	check = get_time();
+	stop = value / 1000;
+	while ((get_time() - check) < stop)
+		usleep(1000);
+}
