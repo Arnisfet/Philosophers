@@ -68,5 +68,6 @@ void		join(t_data *p);
 void		fall_asleep(t_attribute *p);
 void		eat(t_attribute *p);
 void		*death_monitor(void *check);
+void		my_usleep(long int value);
 
 #endif //MY_PHILO_PHILO_H

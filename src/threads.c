@@ -6,7 +6,7 @@
  * 		б) Поспать
  * 		в) Подумать
  * 		г) Все заново, пока не умрут
- * */
+ */
 
 void *ft_actions(void *check)
 {
@@ -47,7 +47,6 @@ void	threads(t_data *p, int number)
 	i = 1;
 	if (number == 2)
 		i = 0;
-
 	while (i < p->philo)
 	{
 			p->philo_t[i].number = i + 1;
@@ -56,7 +55,7 @@ void	threads(t_data *p, int number)
 			p->philo_t[i].right_fork = ((i + 1) % p->philo);
 			pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &(p->philo_t[i])); // Сделай проверку на выделение потоков
 			i += 2;
-			usleep(1000);
+		my_usleep(1000);
 	}
 	if (number == 1)
 	{
