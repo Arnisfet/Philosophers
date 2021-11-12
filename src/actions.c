@@ -10,6 +10,7 @@ void	eat(t_attribute *p)
 	p->eating = 1;
 	usleep(p->data->time_to_eat * 1000);
 	p->eating = 0;
+	++p->count_eat_ph;
 }
 
 void	put_fork(t_attribute *p)

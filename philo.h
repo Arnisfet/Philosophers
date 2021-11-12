@@ -37,6 +37,7 @@ typedef struct s_philo_attribute
 	long int	limit;
 	long int	last_eat;
 	int			eating;
+	long int	count_eat_ph;
 
 	struct s_struct	*data;
 }				t_attribute;
@@ -47,6 +48,7 @@ typedef struct s_struct
 	long int	time_to_eat;
 	long int	time_to_die;
 	long int	time_to_sleep;
+	long int	count_eat;
 
 	pthread_mutex_t *forks;
 	pthread_mutex_t write;

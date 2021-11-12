@@ -17,6 +17,7 @@ void *ft_actions(void *check)
 	p->last_eat = get_time();
 	p->limit = p->last_eat + p->data->time_to_die;
 	p->eating = 0;
+	p->count_eat_ph = 0;
 	while (1)
 	{
 		put_fork(p);
@@ -75,6 +76,9 @@ void	*death_monitor(void *check)
 	{
 		while (i < p->philo)
 		{
+			if (p->philo_t[i].count_eat_ph >= p->count_eat && p->count_eat
+			!= 0)
+				display_message(&p->philo_t[i], 6);
 			if ((get_time() > p->philo_t[i].limit) && !p->philo_t[i].eating)
 				display_message(&p->philo_t[i], 5);
 			i++;

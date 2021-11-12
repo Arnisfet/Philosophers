@@ -35,10 +35,13 @@ void	display_message(t_attribute *p, int number)
 	if (number == 5)
 	{
 		ft_putstr_fd("is dead", 1);
-		printf(" limit %ld last eat %ld get_time %ld time to born %ld ",
-			   p->limit,
-			   p->last_eat,
-			   get_time(), p->time_to_born);
+		printf(" eat %ld count eat %ld", p->count_eat_ph, p->data->count_eat);
+		exit (0);
+	}
+	if (number == 6)
+	{
+		ft_putstr_fd("Stop the emulation. The philosopher ate the right number "
+					 "of times!", 1);
 		exit (0);
 	}
 	ft_putchar_fd('\n', 1);
