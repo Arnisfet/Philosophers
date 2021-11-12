@@ -47,7 +47,6 @@ void	threads(t_data *p, int number)
 	i = 1;
 	if (number == 2)
 		i = 0;
-
 	while (i < p->philo)
 	{
 			p->philo_t[i].number = i + 1;
