@@ -60,7 +60,7 @@ int threads(t_data *p, int number)
 			(p->philo_t[i])) != 0) // Сделай проверку на выделение потоков
 				return (1);
 			i += 2;
-		my_usleep(1000);
+		my_usleep(100);
 	}
 	return (0);
 }

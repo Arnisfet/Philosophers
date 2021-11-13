@@ -56,5 +56,5 @@ void	my_usleep(long int value)
 	check = get_time();
 	stop = value / 1000;
 	while ((get_time() - check) < stop)
-		usleep(1000);
+		usleep(100);
 }
