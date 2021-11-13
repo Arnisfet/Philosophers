@@ -26,7 +26,11 @@ libft/libft.h
 sys/time.h
 -
 
-/home/arnisfet/Desktop/Philosophers/src/actions.c
+/home/arnisfet/Desktop/Philosophers/src/another.c
+../philo.h
+/home/arnisfet/Desktop/Philosophers/philo.h
+
+/home/arnisfet/Desktop/Philosophers/src/main.c
 ../philo.h
 /home/arnisfet/Desktop/Philosophers/philo.h
 
