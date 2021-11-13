@@ -16,11 +16,11 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@ar rc $(NAME) $(OBJS)
-	@echo "\t\t\t\t\033[0;42mCompile is ready\n"
+	@echo "\t\t\t\tCompile is ready\t\n"
 
 %.o:	%.c
 	@gcc $(FLAGS) -c $< -o $@
-	@echo "\t\t\t\t\033[0;31mCompile $@"
+	@echo "\t\t\t\t\033[32m Compile $@"
 
 clean:
 	@rm -f $(OBJS)
