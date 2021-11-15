@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:35:41 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/15 18:57:33 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/15 19:08:14 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,32 +31,21 @@ long int	get_time(void)
 int display_message(t_attribute *p, int number)
 {
 	pthread_mutex_lock(&p->data->write);
-	ft_putnbr_fd(get_time() - p->time_to_born, 1);
-	ft_putchar_fd(' ', 1);
-	ft_putnbr_fd(p->number, 1);
-	ft_putchar_fd(' ', 1);
 	if (number == 1)
-		ft_putstr_fd("has taken a fork", 1);
+		printf("%ld %d has taken a fork\n", get_time() - p->time_to_born, p->number);
 	if (number == 2)
-		ft_putstr_fd("is eating", 1);
-	if (number == 3)
-		ft_putstr_fd("is sleeping", 1);
+		printf("%ld %d is eating\n", get_time() - p->time_to_born, p->number);
+	if (number == 3 && p->data->death_flag != 1)
+		printf("%ld %d is sleeping\n", get_time() - p->time_to_born, p->number);
 	if (number == 4)
-		ft_putstr_fd("is thinking", 1);
+		printf("%ld %d is thinking\n", get_time() - p->time_to_born,
+			   p->number);
 	if (number == 5)
-	{
-		ft_putstr_fd("is dead", 1);
-		p->data->death_flag = 1;
-	}
+		printf("%ld %d is dead\n", get_time() - p->time_to_born, p->number);;
 	if (number == 6)
-	{
-		ft_putstr_fd("Stop the emulation. The philosopher ate the right number "
-					 "of times!", 1);
-		p->data->death_flag = 1;
-	}
-	ft_putchar_fd('\n', 1);
+		printf("%ld %d Stop the emulation. The philosopher ate the right number"
+			   "of times!\n", get_time() - p->time_to_born, p->number);
 	pthread_mutex_unlock(&p->data->write);
-//	return (0);
 }
 
 void	my_usleep(long int value)
