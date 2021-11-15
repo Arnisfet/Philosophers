@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:40:15 by mrudge            #+#    #+#             */
-/*   Updated: 2021/10/19 20:39:38 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/15 15:33:12 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	error_parse(char **av, int ac, t_data *p)
 	int			arg;
 
 	p->count_eat = 0;
+	p->death_flag = 0;
 	arg = ac - 1;
 	if (ac < 5 || ac > 6)
 		error_message();
@@ -75,7 +76,6 @@ int	initialize(t_data *p)
 	while (i < p->philo)
 		pthread_mutex_init(&p->forks[i++], NULL);
 	pthread_mutex_init(&p->write, NULL);
-	pthread_mutex_init(&p->eat, NULL);
 	return (1);
 }
 
@@ -87,9 +87,9 @@ int	main(int ac, char **av)
 	error_parse(av, ac, p);
 	initialize(p);
 	if (threads(p, 2))
-		return (0);
+		return (1);
 	if (threads(p, 1))
-		return (0);
-	join(p);
+		return (1);
+	join_and_destroy(p);
 	return (0);
 }

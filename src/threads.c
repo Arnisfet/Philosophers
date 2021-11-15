@@ -31,7 +31,7 @@ void *ft_actions(void *check)
 	}
 }
 
-void	join(t_data *p)
+void	join_and_destroy(t_data *p)
 {
 	int i;
 
@@ -60,7 +60,7 @@ int threads(t_data *p, int number)
 			(p->philo_t[i])) != 0) // Сделай проверку на выделение потоков
 				return (1);
 			i += 2;
-		my_usleep(100);
+		my_usleep(10);
 	}
 	return (0);
 }
