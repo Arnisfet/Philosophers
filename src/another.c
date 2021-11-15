@@ -1,21 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   another.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/15 11:35:41 by mrudge            #+#    #+#             */
+/*   Updated: 2021/11/15 11:38:09 by mrudge           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../philo.h"
 
-void	error_message()
+void	error_message(void)
 {
 	printf("Bad arg");
 	exit (0);
 }
 
-long int	get_time()
+long int	get_time(void)
 {
-	long int	result;
+	long int		result;
 	struct timeval	tv;
 
 	gettimeofday(&tv, NULL);
 	result = (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
 	return (result);
 }
-
 
 void	display_message(t_attribute *p, int number)
 {
@@ -36,14 +47,10 @@ void	display_message(t_attribute *p, int number)
 	{
 		ft_putstr_fd("is dead", 1);
 		printf(" eat %ld count eat %ld", p->count_eat_ph, p->data->count_eat);
-		exit (0);
 	}
 	if (number == 6)
-	{
 		ft_putstr_fd("Stop the emulation. The philosopher ate the right number "
-					 "of times!", 1);
-		exit (0);
-	}
+			"of times!", 1);
 	ft_putchar_fd('\n', 1);
 	pthread_mutex_unlock(&p->data->write);
 }

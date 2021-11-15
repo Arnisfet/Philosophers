@@ -19,7 +19,6 @@
  *
  * Варианты ошибок: 1) Кол-во аргументов меньше 5 или больше 6; */
 
-
 #include "../philo.h"
 
 void	add_to_struct(int arg, long int num, t_data *p)
@@ -43,9 +42,10 @@ void	add_to_struct(int arg, long int num, t_data *p)
 
 void	error_parse(char **av, int ac, t_data *p)
 {
-	long int number;
-	int arg;
+	long int	number;
+	int			arg;
 
+	p->count_eat = 0;
 	arg = ac - 1;
 	if (ac < 5 || ac > 6)
 		error_message();
@@ -63,7 +63,7 @@ void	error_parse(char **av, int ac, t_data *p)
 
 int	initialize(t_data *p)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	p->philo_t = (t_attribute *)malloc(sizeof (t_attribute) * p->philo);
@@ -79,16 +79,17 @@ int	initialize(t_data *p)
 	return (1);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_data *p;
+	t_data	*p;
 
 	p = (t_data *)malloc(sizeof (t_data));
-	p->count_eat = 0; // Убери потом этот говнокод
 	error_parse(av, ac, p);
 	initialize(p);
-	if (threads(p, 2) || threads(p, 1))
+	if (threads(p, 2))
+		return (0);
+	if (threads(p, 1))
 		return (0);
 	join(p);
-	return 0;
+	return (0);
 }
