@@ -1,4 +1,4 @@
-/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles/my_philo.dir
-/home/arnisfet/Desktop/Philosophers/cmake-build-debug/CMakeFiles/foo.dir
+/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug/CMakeFiles/my_philo.dir
+/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug/CMakeFiles/foo.dir

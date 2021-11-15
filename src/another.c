@@ -33,17 +33,10 @@ void	display_message(t_attribute *p, int number)
 	if (number == 4)
 		ft_putstr_fd("is thinking", 1);
 	if (number == 5)
-	{
 		ft_putstr_fd("is dead", 1);
-		printf(" eat %ld count eat %ld", p->count_eat_ph, p->data->count_eat);
-		exit (0);
-	}
 	if (number == 6)
-	{
 		ft_putstr_fd("Stop the emulation. The philosopher ate the right number "
 					 "of times!", 1);
-		exit (0);
-	}
 	ft_putchar_fd('\n', 1);
 	pthread_mutex_unlock(&p->data->write);
 }

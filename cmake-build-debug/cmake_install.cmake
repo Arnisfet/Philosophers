@@ -1,4 +1,4 @@
-# Install script for directory: /home/arnisfet/Desktop/Philosophers
+# Install script for directory: /home/arnisfet/Рабочий стол/Philosophers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/arnisfet/Desktop/Philosophers/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
