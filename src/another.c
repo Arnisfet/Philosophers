@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   another.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/15 11:35:41 by mrudge            #+#    #+#             */
+/*   Updated: 2021/11/15 15:33:12 by mrudge           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../philo.h"
 
-void	error_message()
+void	error_message(void)
 {
 	printf("Bad arg");
 	exit (0);
 }
 
-long int	get_time()
+long int	get_time(void)
 {
-	long int	result;
+	long int		result;
 	struct timeval	tv;
 
 	gettimeofday(&tv, NULL);
@@ -16,8 +28,7 @@ long int	get_time()
 	return (result);
 }
 
-
-void	display_message(t_attribute *p, int number)
+int display_message(t_attribute *p, int number)
 {
 	pthread_mutex_lock(&p->data->write);
 	ft_putnbr_fd(get_time() - p->time_to_born, 1);
@@ -35,17 +46,17 @@ void	display_message(t_attribute *p, int number)
 	if (number == 5)
 	{
 		ft_putstr_fd("is dead", 1);
-		printf(" eat %ld count eat %ld", p->count_eat_ph, p->data->count_eat);
-		exit (0);
+		p->data->death_flag = 1;
 	}
 	if (number == 6)
 	{
 		ft_putstr_fd("Stop the emulation. The philosopher ate the right number "
 					 "of times!", 1);
-		exit (0);
+		p->data->death_flag = 1;
 	}
 	ft_putchar_fd('\n', 1);
 	pthread_mutex_unlock(&p->data->write);
+//	return (0);
 }
 
 void	my_usleep(long int value)
