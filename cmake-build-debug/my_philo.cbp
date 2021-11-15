@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="my_philo"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="my_philo">
+				<Option output="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug/my_philo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 my_philo"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="my_philo/fast">
+				<Option output="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug/my_philo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 my_philo/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="foo">
+				<Option output="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug/libfoo.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 foo"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="foo/fast">
+				<Option output="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug/libfoo.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arnisfet/Рабочий стол/Philosophers/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 foo/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arnisfet/Рабочий\ стол/Philosophers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_atof.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_atoi.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_bzero.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_calloc.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_count_words.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_isalnum.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_isalpha.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_isascii.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_isdigit.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_isprint.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_itoa.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_memccpy.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_memchr.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_memcmp.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_memcpy.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_memmove.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_memset.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_mystrncpy.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_putchar_fd.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_putendl_fd.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_putnbr_fd.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_putstr_fd.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_split.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strchr.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strcmp.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strdup.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strjoin.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strlcat.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strlcpy.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strlen.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strmapi.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strncmp.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strndup.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strnstr.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strrchr.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_strtrim.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_substr.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_tolower.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/ft_toupper.c">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/libft/libft.h">
+			<Option target="foo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/src/actions.c">
+			<Option target="my_philo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/src/another.c">
+			<Option target="my_philo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/src/main.c">
+			<Option target="my_philo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/src/threads.c">
+			<Option target="my_philo"/>
+		</Unit>
+		<Unit filename="/home/arnisfet/Рабочий стол/Philosophers/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -22,12 +22,13 @@ void *ft_actions(void *check)
 	if (pthread_create(&monitor, NULL, death_monitor, p) != 0)
 		return ((void *)1);
 	pthread_detach(monitor);
-	while (1)
+	while (p->data->death_flag != 1)
 	{
-		put_fork(p);
-		eat(p);
-		fall_asleep(p);
-		display_message(p, 4);
+			put_fork(p);
+			eat(p);
+			fall_asleep(p);
+		if (p->data->death_flag != 1)
+			display_message(p, 4);
 	}
 }
 
@@ -57,10 +58,10 @@ int threads(t_data *p, int number)
 			p->philo_t[i].left_fork = i;
 			p->philo_t[i].right_fork = ((i + 1) % p->philo);
 			if (pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &
-			(p->philo_t[i])) != 0) // Сделай проверку на выделение потоков
+			(p->philo_t[i])) != 0)
 				return (1);
 			i += 2;
-		my_usleep(10);
+		my_usleep(100);
 	}
 	return (0);
 }
@@ -77,10 +78,18 @@ void	*death_monitor(void *check)
 		while (i < p->data->philo)
 		{
 			if (p->count_eat_ph >= p->data->count_eat && p->data->count_eat
-			!= 0)
+			!= 0 && p->data->death_flag != 1)
+			{
+				p->data->death_flag = 1;
 				display_message(p, 6);
-			if ((get_time() > p->limit) && !p->eating)
+				return ((void *)1);
+			}
+			if ((get_time() > p->limit) && !p->eating && p->data->death_flag != 1)
+			{
+				p->data->death_flag = 1;
 				display_message(p, 5);
+				return ((void *)1);
+			}
 			i++;
 		}
 		i = 0;
