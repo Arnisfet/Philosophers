@@ -45,6 +45,5 @@ void	fall_asleep(t_attribute *p)
 		display_message(p, 3);
 	pthread_mutex_unlock(&p->data->forks[p->left_fork]);
 	pthread_mutex_unlock(&p->data->forks[p->right_fork]);
-//	my_usleep(p->data->time_to_sleep * 1000);
 	usleep(p->data->time_to_sleep * 1000);
 }

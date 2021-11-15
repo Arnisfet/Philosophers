@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:36:02 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/15 15:50:18 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/15 18:02:01 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_struct
 
 	pthread_mutex_t *forks;
 	pthread_mutex_t write;
+	pthread_mutex_t	death;
 
 	t_attribute *philo_t;
 }				t_data;
@@ -61,7 +62,7 @@ void		error_message();
 long int	get_time();
 int 		threads(t_data *p, int number);
 void		put_fork(t_attribute *p);
-void		display_message(t_attribute *p, int number);
+int			display_message(t_attribute *p, int number);
 void		join_and_destroy(t_data *p);
 void		fall_asleep(t_attribute *p);
 void		eat(t_attribute *p);

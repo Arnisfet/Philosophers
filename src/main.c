@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:40:15 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/15 15:50:17 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/15 18:21:09 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	initialize(t_data *p)
 	while (i < p->philo)
 		pthread_mutex_init(&p->forks[i++], NULL);
 	pthread_mutex_init(&p->write, NULL);
+	pthread_mutex_init(&p->death, NULL);
 	return (1);
 }
 
@@ -86,10 +87,11 @@ int	main(int ac, char **av)
 	p = (t_data *)malloc(sizeof (t_data));
 	error_parse(av, ac, p);
 	initialize(p);
-	if (threads(p, 2))
-		return (1);
 	if (threads(p, 1))
 		return (1);
+	if (threads(p, 2))
+		return (1);
+	pthread_mutex_unlock(&p->death);
 	join_and_destroy(p);
 	return (0);
 }

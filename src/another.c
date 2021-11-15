@@ -17,7 +17,7 @@ long int	get_time()
 }
 
 
-void	display_message(t_attribute *p, int number)
+int	display_message(t_attribute *p, int number)
 {
 	pthread_mutex_lock(&p->data->write);
 	ft_putnbr_fd(get_time() - p->time_to_born, 1);
