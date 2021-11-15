@@ -11,6 +11,7 @@
 void *ft_actions(void *check)
 {
 	t_attribute 	*p;
+	pthread_t		monitor;
 
 	p = (t_attribute *)check;
 	p->time_to_born = get_time();
@@ -18,6 +19,9 @@ void *ft_actions(void *check)
 	p->limit = p->last_eat + p->data->time_to_die;
 	p->eating = 0;
 	p->count_eat_ph = 0;
+	if (pthread_create(&monitor, NULL, death_monitor, p) != 0)
+		return ((void *)1);
+	pthread_detach(monitor);
 	while (1)
 	{
 		put_fork(p);
@@ -37,10 +41,9 @@ void	join(t_data *p)
 		pthread_join(p->philo_t[i].arr_ph, NULL);
 		i++;
 	}
-	pthread_join(p->monitor, NULL);
 }
 
-void	threads(t_data *p, int number)
+int threads(t_data *p, int number)
 {
 	int i;
 
@@ -53,33 +56,31 @@ void	threads(t_data *p, int number)
 			p->philo_t[i].data = p;
 			p->philo_t[i].left_fork = i;
 			p->philo_t[i].right_fork = ((i + 1) % p->philo);
-			pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &(p->philo_t[i])); // Сделай проверку на выделение потоков
+			if (pthread_create(&p->philo_t[i].arr_ph, NULL, ft_actions, &
+			(p->philo_t[i])) != 0) // Сделай проверку на выделение потоков
+				return (1);
 			i += 2;
-		my_usleep(1000);
+		my_usleep(100);
 	}
-	if (number == 1)
-	{
-		pthread_create(&p->monitor, NULL, death_monitor, p);
-		pthread_detach(p->monitor);
-	}
+	return (0);
 }
 
 void	*death_monitor(void *check)
 {
 	int i;
-	t_data *p;
+	t_attribute *p;
 
-	p = (t_data *)check;
+	p = (t_attribute *)check;
 	i = 0;
 	while (21)
 	{
-		while (i < p->philo)
+		while (i < p->data->philo)
 		{
-			if (p->philo_t[i].count_eat_ph >= p->count_eat && p->count_eat
+			if (p->count_eat_ph >= p->data->count_eat && p->data->count_eat
 			!= 0)
-				display_message(&p->philo_t[i], 6);
-			if ((get_time() > p->philo_t[i].limit) && !p->philo_t[i].eating)
-				display_message(&p->philo_t[i], 5);
+				display_message(p, 6);
+			if ((get_time() > p->limit) && !p->eating)
+				display_message(p, 5);
 			i++;
 		}
 		i = 0;
