@@ -61,7 +61,7 @@ int threads(t_data *p, int number)
 			(p->philo_t[i])) != 0)
 				return (1);
 			i += 2;
-		my_usleep(100);
+		my_usleep(200);
 	}
 	return (0);
 }
@@ -73,6 +73,7 @@ void	*death_monitor(void *check)
 
 	p = (t_attribute *)check;
 	i = 0;
+	pthread_mutex_lock(&p->data->death);
 	while (21)
 	{
 		while (i < p->data->philo)

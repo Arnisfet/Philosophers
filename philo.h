@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:36:02 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/15 17:41:48 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/15 18:53:18 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_struct
 
 	pthread_mutex_t *forks;
 	pthread_mutex_t write;
-
+	pthread_mutex_t	death;
 	t_attribute *philo_t;
 }				t_data;
 
