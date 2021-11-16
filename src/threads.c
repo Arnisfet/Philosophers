@@ -61,7 +61,7 @@ int threads(t_data *p, int number)
 			(p->philo_t[i])) != 0)
 				return (1);
 			i += 2;
-		my_usleep(200);
+		my_usleep(1000);
 	}
 	return (0);
 }

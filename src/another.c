@@ -41,7 +41,7 @@ int display_message(t_attribute *p, int number)
 		printf("%ld %d is thinking\n", get_time() - p->time_to_born,
 			   p->number);
 	if (number == 5)
-		printf("%ld %d is dead\n", get_time() - p->time_to_born, p->number);;
+		printf("%ld %d is dead\n", get_time() - p->time_to_born, p->number);
 	if (number == 6)
 		printf("%ld %d Stop the emulation. The philosopher ate the right number"
 			   "of times!\n", get_time() - p->time_to_born, p->number);
