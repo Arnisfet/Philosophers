@@ -6,15 +6,15 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:36:02 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/15 18:53:18 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/16 22:13:48 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef MY_PHILO_PHILO_H
-# define MY_PHILO_PHILO_H
+#ifndef PHILO_H
+# define PHILO_H
 
-#include <string.h>
-#include <pthread.h>
+# include <string.h>
+# include <pthread.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft/libft.h"
@@ -25,41 +25,39 @@
 # define SLEEP	2
 # define THINK	3
 
-struct s_struct;
+struct	s_struct;
 
 typedef struct s_philo_attribute
 {
-	pthread_t	arr_ph;
-	int			number;
-	long int	time_to_born;
-	int			left_fork;
-	int			right_fork;
-	long int	limit;
-	long int	last_eat;
-	int			eating;
-	long int	count_eat_ph;
-
+	pthread_t		arr_ph;
+	int				number;
+	long int		time_to_born;
+	int				left_fork;
+	int				right_fork;
+	long int		limit;
+	long int		last_eat;
+	int				eating;
+	long int		count_eat_ph;
 	struct s_struct	*data;
 }				t_attribute;
 
 typedef struct s_struct
 {
-	long int	philo;
-	long int	time_to_eat;
-	long int	time_to_die;
-	long int	time_to_sleep;
-	long int	count_eat;
-	int			death_flag;
-
-	pthread_mutex_t *forks;
-	pthread_mutex_t write;
+	long int		philo;
+	long int		time_to_eat;
+	long int		time_to_die;
+	long int		time_to_sleep;
+	long int		count_eat;
+	int				death_flag;
+	pthread_mutex_t	*forks;
+	pthread_mutex_t	write;
 	pthread_mutex_t	death;
-	t_attribute *philo_t;
+	t_attribute		*philo_t;
 }				t_data;
 
-void		error_message();
-long int	get_time();
-int 		threads(t_data *p, int number);
+void		error_message(void);
+long int	get_time(void);
+int			threads(t_data *p, int number);
 void		put_fork(t_attribute *p);
 int			display_message(t_attribute *p, int number);
 void		join_and_destroy(t_data *p);
@@ -68,4 +66,4 @@ void		eat(t_attribute *p);
 void		*death_monitor(void *check);
 void		my_usleep(long int value);
 
-#endif //MY_PHILO_PHILO_H
+#endif

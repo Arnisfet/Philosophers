@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/16 22:17:51 by mrudge            #+#    #+#             */
+/*   Updated: 2021/11/17 21:23:30 by mrudge           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //
 // Created by vitya on 04.05.2021.
 //
 
 #include "libft.h"
 
-int	counter_and_minus(int n)
+static int	counter_and_minus(int n)
 {
 	int	len;
 
@@ -22,6 +34,16 @@ int	counter_and_minus(int n)
 		n /= 10;
 	}
 	return (len);
+}
+
+static void	writer(int n, char *arr, int len_arr)
+{
+	while (n)
+	{
+		arr[len_arr - 1] = (n % 10) + '0';
+		n /= 10;
+		len_arr--;
+	}
 }
 
 char	*ft_itoa(int n)
@@ -43,11 +65,7 @@ char	*ft_itoa(int n)
 			n = -n;
 		}
 		arr[len_arr] = '\0';
-		while (n)
-		{
-			arr[len_arr - 1] = (n % 10) + '0';
-			n /= 10, len_arr--;
-		}
+		writer(n, arr, len_arr);
 		return (arr);
 	}
 	return (NULL);
