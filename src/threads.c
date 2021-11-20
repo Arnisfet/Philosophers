@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 21:59:56 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/16 22:10:21 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/20 15:43:19 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_actions(void *check)
 	pthread_t		monitor;
 
 	p = (t_attribute *)check;
-	p->time_to_born = get_time();
+	p->time_to_born_ph = p->data->time_to_born;
 	p->last_eat = get_time();
 	p->limit = p->last_eat + p->data->time_to_die;
 	p->eating = 0;
@@ -46,6 +46,15 @@ void	join_and_destroy(t_data *p)
 		pthread_join(p->philo_t[i].arr_ph, NULL);
 		i++;
 	}
+
+	i = 0;
+	while (i < p->philo)
+	{
+		pthread_mutex_destroy(&p->forks[i]);
+		i++;
+	}
+	pthread_mutex_destroy(&p->death);
+	pthread_mutex_destroy(&p->write);
 }
 
 int	threads(t_data *p, int number)
@@ -58,6 +67,7 @@ int	threads(t_data *p, int number)
 	while (i < p->philo)
 	{
 		p->philo_t[i].number = i + 1;
+		p->time_to_born = get_time();
 		p->philo_t[i].data = p;
 		p->philo_t[i].left_fork = i;
 		p->philo_t[i].right_fork = ((i + 1) % p->philo);
@@ -83,12 +93,14 @@ void	*death_monitor(void *check)
 		{
 			p->data->death_flag = 1;
 			display_message(p, 6);
+			return ((void *) 0);
 		}
 		if ((get_time() > p->limit) && !p->eating
 			&& p->data->death_flag != 1)
 		{
 			p->data->death_flag = 1;
 			display_message(p, 5);
+			return ((void *) 0);
 		}
 	}
 }

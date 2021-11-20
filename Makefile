@@ -9,12 +9,12 @@ INC_LIB	=	-I libft/libft.h
 NAME	=	philo
 
 %.o:	%.c
-	gcc -c -I. $(INC_LIB) $< -o $@
+	gcc -c -g -I. $(INC_LIB) $< -o $@
 	
 
 all:	$(OBJ)
 	make -C libft
-	gcc $(OBJ) -pthread libft/libft.a -o $(NAME)
+	gcc $(OBJ) -pthread libft/libft.a -g -o $(NAME)
 
 clean:
 	make clean -C libft
