@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 21:59:56 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/20 15:43:19 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/20 17:06:15 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	join_and_destroy(t_data *p)
 		pthread_join(p->philo_t[i].arr_ph, NULL);
 		i++;
 	}
-
 	i = 0;
 	while (i < p->philo)
 	{
@@ -67,7 +66,6 @@ int	threads(t_data *p, int number)
 	while (i < p->philo)
 	{
 		p->philo_t[i].number = i + 1;
-		p->time_to_born = get_time();
 		p->philo_t[i].data = p;
 		p->philo_t[i].left_fork = i;
 		p->philo_t[i].right_fork = ((i + 1) % p->philo);

@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:35:41 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/16 21:58:17 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/20 17:10:12 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	display_message(t_attribute *p, int number)
 	if (number == 2)
 		printf("%ld %d is eating\n", get_time() - p->time_to_born_ph, p->number);
 	if (number == 3 && p->data->death_flag != 1)
-		printf("%ld %d is sleeping\n", get_time() - p->time_to_born_ph, p->number);
+		printf("%ld %d is sleeping\n", get_time() - p->time_to_born_ph,
+			p->number);
 	if (number == 4)
 		printf("%ld %d is thinking\n", get_time() - p->time_to_born_ph,
 			p->number);
@@ -45,7 +46,7 @@ int	display_message(t_attribute *p, int number)
 		printf("%ld %d is dead\n", get_time() - p->time_to_born_ph, p->number);
 	if (number == 6)
 		printf("%ld %d Stop the emulation. The philosopher ate the right number"
-			   "of times!\n", get_time() - p->time_to_born_ph, p->number);
+			"of times!\n", get_time() - p->time_to_born_ph, p->number);
 	pthread_mutex_unlock(&p->data->write);
 }
 
