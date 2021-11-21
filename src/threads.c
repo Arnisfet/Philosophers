@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 21:59:56 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/20 17:06:15 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/21 18:34:06 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	*ft_actions(void *check)
 	p->count_eat_ph = 0;
 	if (pthread_create(&monitor, NULL, death_monitor, p) != 0)
 		return ((void *)1);
-	pthread_detach(monitor);
 	while (p->data->death_flag != 1)
 	{
 		put_fork(p);
@@ -34,6 +33,7 @@ void	*ft_actions(void *check)
 		if (p->data->death_flag != 1)
 			display_message(p, 4);
 	}
+	pthread_join(monitor, NULL);
 	return (NULL);
 }
 
@@ -85,21 +85,21 @@ void	*death_monitor(void *check)
 
 	p = (t_attribute *)check;
 	pthread_mutex_lock(&p->data->death);
-	while (21)
+	while (p->data->death_flag != 1)
 	{
 		if (p->count_eat_ph >= p->data->count_eat && p->data->count_eat
 			!= 0 && p->data->death_flag != 1)
 		{
 			p->data->death_flag = 1;
 			display_message(p, 6);
-			return ((void *) 0);
 		}
 		if ((get_time() > p->limit) && !p->eating
 			&& p->data->death_flag != 1)
 		{
 			p->data->death_flag = 1;
 			display_message(p, 5);
-			return ((void *) 0);
 		}
 	}
+	pthread_mutex_unlock(&p->data->death);
+	return ((void *) 1);
 }

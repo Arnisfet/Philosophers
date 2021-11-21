@@ -99,7 +99,6 @@ int	main(int ac, char **av)
 		return (1);
 	if (threads(p, 1))
 		return (1);
-	pthread_mutex_unlock(&p->death);
 	join_and_destroy(p);
 	clear_data(p);
 	return (0);
