@@ -53,9 +53,9 @@ void	error_parse(char **av, int ac, t_data *p)
 	while (arg != 0)
 	{
 		number = ft_atoi(av[arg]);
-		if (arg == 1 && number > 200 || number < 1)
+		if ((arg == 1 && number > 200) || number < 1)
 			error_message();
-		if (arg != 1 && arg != 5 && number < 60 || number > 2147483647)
+		if ((arg != 1 && arg != 5 && number < 60) || number > 2147483647)
 			error_message();
 		add_to_struct(arg, number, p);
 		arg--;

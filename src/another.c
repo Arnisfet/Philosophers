@@ -48,6 +48,7 @@ int	display_message(t_attribute *p, int number)
 		printf("%ld %d Stop the emulation. The philosopher ate the right number"
 			"of times!\n", get_time() - p->time_to_born_ph, p->number);
 	pthread_mutex_unlock(&p->data->write);
+	return (0);
 }
 
 void	my_usleep(long int value)

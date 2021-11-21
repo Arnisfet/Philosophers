@@ -34,6 +34,7 @@ void	*ft_actions(void *check)
 		if (p->data->death_flag != 1)
 			display_message(p, 4);
 	}
+	return (NULL);
 }
 
 void	join_and_destroy(t_data *p)

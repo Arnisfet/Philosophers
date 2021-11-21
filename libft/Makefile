@@ -20,14 +20,14 @@ $(NAME):	$(OBJS)
 
 %.o:	%.c
 	@gcc $(FLAGS) -c $< -o $@
-	@echo "\t\t\t\t\033[32m Compile $@"
+	@echo "\t\t\033[32mCompile $@"
 
 clean:
 	@rm -f $(OBJS)
-	@echo "\t\t\t\t\033[0;31mDelete all objects"
+	@echo "\t\t\t\t\033[032mDelete all libft objects\n"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\t\t\t\t\033[0;31mDelete libft.a"
+	@echo "\t\t\t\t\033[032mDelete libft.a\n"
 
 re:	fclean all
