@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:40:15 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/20 14:28:52 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/23 22:40:53 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,13 @@ void	error_parse(char **av, int ac, t_data *p)
 	while (arg != 0)
 	{
 		number = ft_atoi(av[arg]);
-		if ((arg == 1 && number > 200) || number < 1)
+		if (arg == 1 && number > 200 || number < 1)
 			error_message();
-		if ((arg != 1 && arg != 5 && number < 60) || number > 2147483647)
+		if (arg != 1 && arg != 5 && number < 60 || number > 2147483647)
 			error_message();
 		add_to_struct(arg, number, p);
 		arg--;
 	}
-}
-
-void	clear_data(t_data *p)
-{
-	free(p->philo_t);
-	free(p->forks);
-	free(p);
 }
 
 int	initialize(t_data *p)
@@ -78,13 +71,11 @@ int	initialize(t_data *p)
 	if (!p->philo_t)
 		return (0);
 	p->forks = (pthread_mutex_t *)malloc(sizeof (pthread_mutex_t) * p->philo);
-	if (!p->forks)
+	if (!p->philo_t)
 		return (0);
 	while (i < p->philo)
 		pthread_mutex_init(&p->forks[i++], NULL);
 	pthread_mutex_init(&p->write, NULL);
-	pthread_mutex_init(&p->death, NULL);
-	p->time_to_born = get_time();
 	return (1);
 }
 
@@ -100,6 +91,5 @@ int	main(int ac, char **av)
 	if (threads(p, 1))
 		return (1);
 	join_and_destroy(p);
-	clear_data(p);
 	return (0);
 }
