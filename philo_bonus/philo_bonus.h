@@ -5,13 +5,17 @@
 #ifndef PHILOSOPHERS_PHILO_BONUS_H
 #define PHILOSOPHERS_PHILO_BONUS_H
 
-# include <string.h>
-# include <pthread.h>
-# include <stdio.h>
+# include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <pthread.h>
+# include <semaphore.h>
+# include <signal.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/time.h>
+# include <sys/wait.h>
 # include "libft/libft.h"
-# include	<sys/time.h>
-
 
 typedef struct s_philo_attribute
 {
@@ -37,6 +41,10 @@ typedef struct s_struct
 	long int		count_eat;
 	int				death_flag;
 	t_attribute		*forks_t;
+
+	sem_t			*write;
+	sem_t			*death;
+	sem_t			*forks_n;
 }				t_data;
 
 void	error_parse(char **av, int ac, t_data *p);
