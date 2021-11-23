@@ -29,14 +29,14 @@ typedef struct s_philo_attribute
 
 typedef struct s_struct
 {
-	long int		philo;
+	long int		forks;
 	long int		time_to_born;
 	long int		time_to_eat;
 	long int		time_to_die;
 	long int		time_to_sleep;
 	long int		count_eat;
 	int				death_flag;
-	t_attribute		*philo_t;
+	t_attribute		*forks_t;
 }				t_data;
 
 void	error_parse(char **av, int ac, t_data *p);

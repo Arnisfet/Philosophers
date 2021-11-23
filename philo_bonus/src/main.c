@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:17:41 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/22 22:20:44 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/23 08:54:18 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	add_to_struct(int arg, long int num, t_data *p)
 	if (arg == 2)
 		p->time_to_die = num;
 	if (arg == 1)
-		p->philo = num;
-	p->philo_t = NULL;
+		p->forks = num;
+//	p->forks = 0;
 }
 
 void	error_parse(char **av, int ac, t_data *p)
@@ -51,11 +51,20 @@ void	error_parse(char **av, int ac, t_data *p)
 	}
 }
 
+void	initialise(t_data *p)
+{
+//	printf("%d forks, %d tte, %d time to sleep", p->forks, p->time_to_eat,
+//		  p->time_to_sleep);
+	p->forks_t = (t_attribute *)malloc(sizeof (t_data) * p->forks);
+
+}
+
 int	main(int ac, char **av)
 {
 	t_data *p;
 
 	p = (t_data *)malloc(sizeof (t_data));
 	error_parse(av, ac, p);
-//	initialize(p);
+	initialise(p);
+//	forks(p, 2);
 }
