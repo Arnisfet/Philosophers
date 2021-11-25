@@ -1,4 +1,4 @@
-SRC	=	$(addprefix ./src/, main.c another.c)
+SRC	=	$(addprefix ./src/, main.c another.c forks.c)
 
 OBJ	=	$(SRC:.c=.o)
 

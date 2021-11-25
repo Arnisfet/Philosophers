@@ -76,6 +76,8 @@ int	initialize(t_data *p)
 	while (i < p->philo)
 		pthread_mutex_init(&p->forks[i++], NULL);
 	pthread_mutex_init(&p->write, NULL);
+	pthread_mutex_init(&p->death, NULL);
+	pthread_mutex_init(&p->eat, NULL);
 	p->time_to_born = get_time();
 	return (1);
 }

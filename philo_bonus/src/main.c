@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:17:41 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/23 22:51:49 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/23 23:18:27 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	add_to_struct(int arg, long int num, t_data *p)
 {
-	p->forks_t = (t_attribute *)malloc(sizeof (t_data) * p->forks);
 	if (arg == 5)
 	{
 		if (num < 0 || num > 2147483647)
@@ -74,8 +73,10 @@ int	main(int ac, char **av)
 	t_data *p;
 
 	p = (t_data *)malloc(sizeof (t_data));
+	p->forks_t = (t_attribute *)malloc(sizeof (t_data) * p->forks);
 	error_parse(av, ac, p);
-
-//	forks(p, 2);
 	initialise(p);
+	forks(p, 2);
+	forks(p, 1);
+
 }

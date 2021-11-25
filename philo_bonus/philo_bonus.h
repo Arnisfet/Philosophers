@@ -19,7 +19,7 @@
 
 typedef struct s_philo_attribute
 {
-	pthread_t		arr_ph;
+	int				pid;
 	long int		time_to_born_ph;
 	int				number;
 	int				left_fork;
@@ -48,5 +48,7 @@ typedef struct s_struct
 }				t_data;
 
 void	error_parse(char **av, int ac, t_data *p);
+void	forks(t_data *p, int number);
+void	error_message(void);
 
 #endif //PHILOSOPHERS_PHILO_BONUS_H

@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:36:02 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/23 22:46:21 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/25 18:15:11 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ struct	s_struct;
 typedef struct s_philo_attribute
 {
 	pthread_t		arr_ph;
+	int				flag;
 	long int		time_to_born_ph;
 	int				number;
 	int				left_fork;
@@ -53,6 +54,7 @@ typedef struct s_struct
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	write;
 	pthread_mutex_t	death;
+	pthread_mutex_t	eat;
 	t_attribute		*philo_t;
 }				t_data;
 
