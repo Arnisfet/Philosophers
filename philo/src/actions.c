@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 21:59:03 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/23 22:54:40 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/25 19:25:49 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	eat(t_attribute *p)
 	p->eating = 1;
 	my_usleep(p->data->time_to_eat * 1000);
 	p->eating = 0;
+	if (p->count_eat_ph == p->data->count_eat)
+		p->flag = 1;
 	++p->count_eat_ph;
 }
 

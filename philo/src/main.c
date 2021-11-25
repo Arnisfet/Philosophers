@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:40:15 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/23 22:57:01 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/25 19:25:49 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int	initialize(t_data *p)
 	while (i < p->philo)
 		pthread_mutex_init(&p->forks[i++], NULL);
 	pthread_mutex_init(&p->write, NULL);
+	pthread_mutex_init(&p->death, NULL);
+	pthread_mutex_init(&p->eat, NULL);
 	p->time_to_born = get_time();
 	return (1);
 }
