@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:35:41 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/25 19:23:48 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/27 19:34:50 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ long int	get_time(void)
 
 int	display_message(t_attribute *p, int number)
 {
-	if (p->flag == 1)
-		pthread_mutex_lock(&p->data->eat);
 	pthread_mutex_lock(&p->data->write);
 	if (number == 1)
 		printf("%ld %d has taken a fork\n", get_time() - p->time_to_born_ph,
