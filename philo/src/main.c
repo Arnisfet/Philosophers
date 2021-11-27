@@ -21,6 +21,13 @@
 
 #include "../philo.h"
 
+void	clear(t_data *p)
+{
+	free(p->philo_t);
+	free(p->forks);
+	free(p);
+}
+
 void	add_to_struct(int arg, long int num, t_data *p)
 {
 	if (arg == 5)
@@ -94,5 +101,6 @@ int	main(int ac, char **av)
 	if (threads(p, 1))
 		return (1);
 	join_and_destroy(p);
+	clear(p);
 	return (0);
 }
