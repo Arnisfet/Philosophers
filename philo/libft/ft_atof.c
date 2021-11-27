@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_words.c                                   :+:      :+:    :+:   */
+/*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:17:22 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/16 22:17:22 by mrudge           ###   ########.fr       */
+/*   Created: 2021/11/16 22:16:33 by mrudge            #+#    #+#             */
+/*   Updated: 2021/11/23 22:46:21 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Created by Mickey Rudge on 5/11/21.
-//
-// Функция счета слов
-
 #include "libft.h"
 
-size_t	ft_count_words(const char *s, char c)
+double	ft_atof(const char *str)
 {
+	char	*c;
+	double	first_part;
+	double	second_part;
 	int		len;
-	size_t	j;
 
-	j = 0;
-	len = 0;
-	while (s[len])
+	c = (char *)str;
+	first_part = (double)ft_atoi(str);
+	while (*c && *c != '.')
+		c++;
+	c++;
+	second_part = (double)ft_atoi(c);
+	len = ft_strlen(c);
+	while (len)
 	{
-		while (s[len] == c && s[len] != '\0')
-			len++;
-		if (s[len] != c && s[len])
-			j++;
-		while (s[len] != c && s[len])
-			len++;
+		second_part /= 10;
+		len--;
 	}
-	return (j);
+	if (first_part > 0)
+		return (first_part + second_part);
+	return (first_part - second_part);
 }

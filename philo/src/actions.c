@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 21:59:03 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/25 18:47:20 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/27 20:33:03 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,40 @@
 
 void	eat(t_attribute *p)
 {
+	if (p->data->philo == 1)
+		return ((void) 0);
 	p->last_eat = get_time();
 	p->limit = p->last_eat + p->data->time_to_die;
 	if (p->data->death_flag != 1)
 		display_message(p, 2);
 	p->eating = 1;
 	my_usleep(p->data->time_to_eat * 1000);
-	p->eating = 0;
 	++p->count_eat_ph;
+	p->eating = 0;
 }
 
 void	put_fork(t_attribute *p)
 {
-	if (p->number == 5)
+	if (p->data->philo == 1)
 	{
-		if (p->data->death_flag != 1)
-			display_message(p, 1);
-		pthread_mutex_lock(&p->data->forks[p->right_fork]);
-		if (p->data->death_flag != 1)
-			display_message(p, 1);
-		pthread_mutex_lock(&p->data->forks[p->left_fork]);
+		display_message(p, 1);
+		my_usleep(p->data->time_to_die * 1000);
+		return ((void) 0);
 	}
-	else
-	{
-		pthread_mutex_lock(&p->data->forks[p->left_fork]);
+		if(pthread_mutex_lock(&p->data->forks[p->left_fork]) != 0)
+			return ((void) 0);
 		if (p->data->death_flag != 1)
 			display_message(p, 1);
-		pthread_mutex_lock(&p->data->forks[p->right_fork]);
+		if(pthread_mutex_lock(&p->data->forks[p->right_fork]) != 0)
+			return ((void) 0);
 		if (p->data->death_flag != 1)
 			display_message(p, 1);
-	}
 }
 
 void	fall_asleep(t_attribute *p)
 {
+	if (p->data->philo == 1)
+		return ((void) 0);
 	display_message(p, 3);
 	pthread_mutex_unlock(&p->data->forks[p->left_fork]);
 	pthread_mutex_unlock(&p->data->forks[p->right_fork]);

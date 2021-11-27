@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:35:41 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/27 19:49:01 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/27 19:56:37 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error_message(void)
 {
-	printf("Bad arg");
+	printf("Bad arg\n");
 	exit (0);
 }
 
@@ -45,7 +45,7 @@ int	display_message(t_attribute *p, int number)
 	if (number == 5)
 		printf("%ld %d is dead\n", get_time() - p->time_to_born_ph, p->number);
 	if (number == 6)
-		printf("%ld %d Stop the emulation. The philosopher ate the right number"
+		printf("%ld %d The philosopher ate the right number"
 			"of times!\n", get_time() - p->time_to_born_ph, p->number);
 	pthread_mutex_unlock(&p->data->write);
 	return (0);
