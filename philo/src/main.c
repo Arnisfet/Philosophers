@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:40:15 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/23 22:57:01 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/25 19:25:49 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@
  * Варианты ошибок: 1) Кол-во аргументов меньше 5 или больше 6; */
 
 #include "../philo.h"
+
+void	clear(t_data *p)
+{
+	free(p->philo_t);
+	free(p->forks);
+	free(p);
+}
 
 void	add_to_struct(int arg, long int num, t_data *p)
 {
@@ -94,5 +101,6 @@ int	main(int ac, char **av)
 	if (threads(p, 1))
 		return (1);
 	join_and_destroy(p);
+	clear(p);
 	return (0);
 }
