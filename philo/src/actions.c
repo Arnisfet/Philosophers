@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 21:59:03 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/27 20:33:03 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/28 13:02:48 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ void	put_fork(t_attribute *p)
 		my_usleep(p->data->time_to_die * 1000);
 		return ((void) 0);
 	}
-		if(pthread_mutex_lock(&p->data->forks[p->left_fork]) != 0)
-			return ((void) 0);
-		if (p->data->death_flag != 1)
-			display_message(p, 1);
-		if(pthread_mutex_lock(&p->data->forks[p->right_fork]) != 0)
-			return ((void) 0);
-		if (p->data->death_flag != 1)
-			display_message(p, 1);
+	if (pthread_mutex_lock(&p->data->forks[p->left_fork]) != 0)
+		return ((void) 0);
+	if (p->data->death_flag != 1)
+		display_message(p, 1);
+	if (pthread_mutex_lock(&p->data->forks[p->right_fork]) != 0)
+		return ((void) 0);
+	if (p->data->death_flag != 1)
+		display_message(p, 1);
 }
 
 void	fall_asleep(t_attribute *p)
@@ -51,5 +51,5 @@ void	fall_asleep(t_attribute *p)
 	display_message(p, 3);
 	pthread_mutex_unlock(&p->data->forks[p->left_fork]);
 	pthread_mutex_unlock(&p->data->forks[p->right_fork]);
-	usleep(p->data->time_to_sleep * 1000);
+	my_usleep(p->data->time_to_sleep * 1000);
 }

@@ -6,7 +6,7 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:36:02 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/27 19:34:50 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/28 12:58:15 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <pthread.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "../libft/libft.h"
-# include	<sys/time.h>
+# include <sys/time.h>
+# include <unistd.h>
 
 # define PUT_FORK	0
 # define EAT	1
@@ -68,5 +68,6 @@ void		fall_asleep(t_attribute *p);
 void		eat(t_attribute *p);
 void		*death_monitor(void *check);
 void		my_usleep(long int value);
+long int	ft_atoi(const char *str);
 
 #endif

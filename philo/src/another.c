@@ -6,11 +6,37 @@
 /*   By: mrudge <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:35:41 by mrudge            #+#    #+#             */
-/*   Updated: 2021/11/27 19:56:37 by mrudge           ###   ########.fr       */
+/*   Updated: 2021/11/28 13:06:53 by mrudge           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
+
+long int	ft_atoi(const char *str)
+{
+	char			*p;
+	long int		x;
+	long int		minus;
+
+	x = 0;
+	minus = 1;
+	p = (char *)str;
+	while (*p == '\t' || *p == '\n' || *p == '\v' || *p == '\f' || *p == '\r'
+		|| *p == ' ')
+		p++;
+	if (*p == 45 || *p == 43)
+	{
+		if (*p == 45)
+			minus *= -1;
+		p++;
+	}
+	while (*p >= '0' && *p <= '9')
+	{
+		x = x * 10 + (*p - '0');
+		p++;
+	}
+	return (x * minus);
+}
 
 void	error_message(void)
 {

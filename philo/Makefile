@@ -4,8 +4,6 @@ OBJ	=	$(SRC:.c=.o)
 
 WWW	=	-Wall -Werror -Wextra
 
-INC_LIB	=	-I libft
-
 NAME	=	philo
 
 
@@ -14,23 +12,19 @@ all: $(NAME)
 echo:
 	@echo "\n\t\t\t\t\033[0mMaking project!\n"
 
-$(NAME): echo	$(OBJ)
-	@echo "\n\n"
-	@echo "\t\t\t\tCompile LIBFT!\n"
-	@make -C libft
-	@echo "\t\t\t\tLibft is ready!\n"
-	@gcc $(OBJ) -pthread libft/libft.a -g -o $(NAME)
-	@echo "\t\t\t\033[0mProject is ready! Launch philo.exe.\n"
+$(NAME): echo	$(OBJ) philo.h
+	@gcc $(OBJ) -pthread -g -o $(NAME)
+	@echo "\t\t\t\033[0mProject is ready! Launch philo\n"
 
 %.o:	%.c
-	@gcc -c -g -I. $(INC_LIB) $(WWW) $< -o $@
+	@gcc -c -g -I. $(WWW) $< -o $@
 	@echo "\t\033[0mCompile $@"
 clean:
-	@make clean -C libft
 	@rm -f $(OBJ)
+	@echo "\t\t\t\t\033[32mDelete all philo obj\n"
 
 fclean: clean
-	@echo "\t\t\t\t\033[32mDelete all philo obj" 
+	@echo "\t\t\t\t\033[32mDelete philo binary\n"
 	@rm -rf $(NAME) 
 
 re: fclean all
